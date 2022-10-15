@@ -52,7 +52,7 @@ public class Datosp extends Caninos{
         this.lp = lp;
         Caninos p = new Caninos(nombre, raza, color, edad, nivEn);
         nom.add(p.getNombre());ra.add(p.getRaza());co.add(p.getColor());ed.add(p.getEdad());niv.add(p.getNivEn());
-        for (int i = 0; i < lp.size(); i++) {
+        for (int i = 0; i < nom.size(); i++) {
             listap = listap +("----//-----//-----//----");
             listap = listap + "\n";
             int enumerador = i+1;

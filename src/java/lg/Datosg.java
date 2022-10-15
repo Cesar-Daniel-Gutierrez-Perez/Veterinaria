@@ -52,7 +52,7 @@ public class Datosg extends Felinos{
         this.lg = lg;
         Felinos g = new Felinos(nombre, raza, color, edad, tox);
         nom.add(g.getNombre());ra.add(g.getRaza());co.add(g.getColor());ed.add(g.getEdad());to.add(g.getTox());
-        for (int i = 0; i < lg.size(); i++) {
+        for (int i = 0; i < nom.size(); i++) {
             listag = listag +("----//-----//-----//----");
             listag = listag + "\n";
             int enumerador = i+1;

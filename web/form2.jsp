@@ -28,24 +28,20 @@
         <%@ page import="lg.Veterinaria"%>
         <%@ page import="lg.Mascota"%> 
         <%ArrayList ip = new ArrayList();
-        ArrayList ig = new ArrayList();
-        ip.add(request.getParameter("gp2"));
-        ig.add(request.getParameter("gg2"));
-        String listap="";
-        String listag="";
+        ArrayList ig = new ArrayList();        
+        String listap=""+request.getParameter("gp2");
+        String listag=""+request.getParameter("gg2");
         String t = request.getParameter("Tox2")+"";
-        Datosg g = new Datosg(request.getParameter("Nombre2"), request.getParameter("Raza2"), request.getParameter("Color2"), request.getParameter("Edad2"), request.getParameter("Tox2")+"",ig);                  
-
-        
         if(t.equals("Si")||t.equals("No")){
-            ip = g.getLg();
-            ip.remove(request.getParameter("G")+"");
+            Datosg g = new Datosg(request.getParameter("Nombre2"), request.getParameter("Raza2"), request.getParameter("Color2"), request.getParameter("Edad2"), request.getParameter("Tox2")+"",ig);                  
+            //ip.remove(request.getParameter("G")+"");
+            listag += g.getLg();            
             listap +="";
         }
         else{
             Datosp p = new Datosp(request.getParameter("Nombre2"), request.getParameter("Raza2"), request.getParameter("Color2"), request.getParameter("Edad2"), request.getParameter("NivEn2"),ip);
-            ig = p.getLp();
-            ig.remove(request.getParameter("P")+"");
+            //ig.remove(request.getParameter("P")+"");
+            listap += p.getLp();
             listag+="";
         }
         %>
@@ -55,8 +51,8 @@
             <p id="Gi" hidden>ingrese el numero de el gato que quiera eliminar:</p> <input type="text" name = "G" id="G" hidden> <br/>
             <p id="Pi" hidden>ingrese el numero de el perro que quiera eliminar:</p><input type="text" name = "P" id="P" hidden> <br/>
             <input type="submit" value = "volver">
-            <textarea name = "rp" id="rp2" cols="200" rows="200" value = "<%out.print(ip);%> " hidden><%out.print(ip);%></textarea>
-            <textarea name = "rg" id="rg2" cols="200" rows="200" value = "<%out.print(ig);%> " hidden><%out.print(ig);%></textarea>                      
+            <textarea name = "rp" id="rp2" cols="200" rows="200" value = "<%out.print(listap);%> " hidden><%out.print(listap);%></textarea>
+            <textarea name = "rg" id="rg2" cols="200" rows="200" value = "<%out.print(listag);%> " hidden><%out.print(listag);%></textarea>                      
             
         </form>        
         <script>            

@@ -30,14 +30,14 @@
         ArrayList ig = new ArrayList();
         String listap="";
         String listag="";
-        Datosg g = new Datosg(request.getParameter("Nombre"), request.getParameter("Raza"), request.getParameter("Color"), request.getParameter("Edad"), request.getParameter("Tox")+"",ig);                  
-        Datosp p = new Datosp(request.getParameter("Nombre"), request.getParameter("Raza"), request.getParameter("Color"), request.getParameter("Edad"), request.getParameter("NivEn"), ip);
         String t = request.getParameter("Tox")+"";
         if(t.equals("Si")||t.equals("No")){
+        Datosg g = new Datosg(request.getParameter("Nombre"), request.getParameter("Raza"), request.getParameter("Color"), request.getParameter("Edad"), request.getParameter("Tox")+"",ig);                  
             listag += g.getLg(); 
             listap +="";
         }
         else{
+            Datosp p = new Datosp(request.getParameter("Nombre"), request.getParameter("Raza"), request.getParameter("Color"), request.getParameter("Edad"), request.getParameter("NivEn"), ip);
             listap += p.getLp();
             listag+="";
         }
