@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>    
+        <h1>Ingrese la informacion requerida</h1>
+        <form action="form.jsp"> 
+        Tipo de mascota: <br/>
+        Perro: <input type="radio" name = "Mascota" id="p">
+        Gato: <input type="radio" name = "Mascota" id="g"> <br/>
+        Nombre: <input type="text" name = "Nombre" > <br/>
+        Raza: <input type="text" name = "Raza"> <br/>
+        Color: <input type="text" name = "Color"> <br/>
+        Edad: <input type="text" name = "Edad"> <br/>
+        <p id="inf" hidden>Nivel de entrenamiento(1 a 10): </p>
+        <input type="text" id="nv" name = "NivEn" hidden>
+        <select id="s" name="Tox" hidden>
+            <option selected disabled>¿Tiene toxoplasmosis?</option>
+            <option>Si</option>
+            <option>No</option>
+        </select><br/>        
+        <input type="submit" value = "ok">
+        </form>
+        <script>            
+            $(function(){
+                $('#p').click(function(){
+                    $('#s').hide();
+                    $('#inf').show();
+                    $('#nv').show();
+                });                
+            });
+            $(function(){
+                $('#g').click(function(){
+                    $('#s').show();
+                    $('#inf').hide();
+                    $('#nv').hide();
+                });                
+            });
+            </script>    
+</html>
